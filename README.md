@@ -5,11 +5,6 @@
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
 This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
 
-
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -24,33 +19,58 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Create server and client VMs on Azure
+- Ping server from client and allow ping on firewall
+- Install AD DS on server and create domain and admin
+- Change client DNS to server IP and join domain
+- Create user accounts on domain using PowerShell
+- Log into user accounts on client and verify AD management
 
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/xVNEbPm.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Using Microsoft Azure, I set up two virtual machines: one as the server and the other as the client.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/wAvxRzX.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  I ensured connectivity between them by sending a ping through the private network from the client to the server. I had to allow the ping on the server’s firewall settings.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/IjAyZOg.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+On the server computer, I installed active directory domain services and created a domain. I also created an admin account for the domain.
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/UWh3exb.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+</p>
+
+<p>
+<img src="https://i.imgur.com/1l0WT0x.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+<p>
+On the client computer, I changed its DNS server settings in Azure to point to the server’s IP address. I also joined the client computer to the domain and enabled domain users to log into it.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/zt4rXfF.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Using Microsoft PowerShell as an admin, I created several user accounts on the domain to test it with. I logged into different user accounts on the client computer and verified that they were managed by the active directory on the server computer.
+</p>
+<br />
+
+
+
+
